@@ -27,11 +27,25 @@ return {
 	-- Hilangkan title bar untuk tampilan clean
 	window_decorations = "RESIZE",
 
-	-- Tema warna (TokyoNight Night - cocok buat LazyVim default)
-	--	color_scheme = "Tokyo Night",
-	-- kTema warna gruvbox
+	-- Tema warna gruvbox
 	color_scheme = "Gruvbox Dark (Gogh)",
 
 	-- Cursor style
 	default_cursor_style = "BlinkingBar",
+
+	-- Shortcuts
+	keys = {
+		-- Split vertical (CTRL + SHIFT + K)
+		{
+			key = "K",
+			mods = "CTRL|SHIFT",
+			action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+		},
+		-- Split horizontal (CTRL + SHIFT + J)
+		{
+			key = "J",
+			mods = "CTRL|SHIFT",
+			action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+		},
+	},
 }
