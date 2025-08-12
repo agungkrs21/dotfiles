@@ -47,5 +47,15 @@ return {
 			mods = "CTRL|SHIFT",
 			action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 		},
+		-- Navigasi ala Vim
+		{ key = "h", mods = "CTRL", action = wezterm.action.ActivatePaneDirection("Left") },
+		{ key = "l", mods = "CTRL", action = wezterm.action.ActivatePaneDirection("Right") },
+		{ key = "k", mods = "CTRL", action = wezterm.action.ActivatePaneDirection("Up") },
+		{ key = "j", mods = "CTRL", action = wezterm.action.ActivatePaneDirection("Down") },
+		-- Resize pane ala Vim (CTRL + ALT + hjkl)
+		{ key = "h", mods = "CTRL|ALT", action = wezterm.action.AdjustPaneSize({ "Left", 3 }) },
+		{ key = "l", mods = "CTRL|ALT", action = wezterm.action.AdjustPaneSize({ "Right", 3 }) },
+		{ key = "k", mods = "CTRL|ALT", action = wezterm.action.AdjustPaneSize({ "Up", 3 }) },
+		{ key = "j", mods = "CTRL|ALT", action = wezterm.action.AdjustPaneSize({ "Down", 3 }) },
 	},
 }
